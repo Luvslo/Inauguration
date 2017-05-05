@@ -22,8 +22,7 @@ if ($_SESSION['conversation']==false && $_SESSION['continue']==false){
 	<tr><td><font color="white"> </td>
 	<td><input id="commandinput" type="text" name="command" placeholder="Commands" autofocus><br></td></tr>
 	<tr><td></td>
-	<td><input class="commandbutton" type="submit" name="perform" value="Do It">
-	<input class="commandbutton" type="submit" name="save" value="Save Progress"></td></tr>
+	<td><input class="commandbutton" type="submit" name="perform" value="Do It"></td></tr>
 	<h3 class="helpbox">For help, type '?' or 'help'. For a hint, type 'hint'.	</h3>
 	</body>
 	</form>
