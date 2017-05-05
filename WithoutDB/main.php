@@ -1,7 +1,7 @@
 <html>
 <body bgcolor="#212121">
 <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
-<?php 
+<?php
 if (!session_id()) //if session hasnt started, start session
 	session_start();
 if (!ISSET($updatedequipment)){
@@ -17,7 +17,7 @@ if (ISSET($_SESSION['cli'])) {
 		<div id="mainintroduction">
 		<?php
 	}
-	if ($level=="Introduction") { 
+	if ($level=="Introduction") {
 		?>
 		<div id="mainintroduction">
 		<?php
@@ -46,12 +46,11 @@ if (ISSET($_SESSION['cli'])) {
 		<div id="mainhome">
 		<?php
 	}
-	
+
 	require("ingamenav.php");
 	echo "<br>";
 	require("header.php");
 	echo "<br>";
-	require("dbc.php");
 	require("inventory.php");
 
 
@@ -59,13 +58,13 @@ require("locations.php"); // needed to be below $rows in order to grab informati
 
 //Displaying health
 if ($level!="The Memories"){
-echo "<h3><font color='white'> Health:"; 
+echo "<h3><font color='white'> Health:";
 for($x=0; $x < $_SESSION['health']; $x++) {
 	echo "<img src='http://i.imgur.com/GbM1xvK.png' width='23px' height='23px'>";
 }
 echo "</h3>";
 }if ($level=="The Memories"){
-echo "<h3> Health:"; 
+echo "<h3> Health:";
 for($x=0; $x < $_SESSION['health']; $x++) {
 	echo "<img src='http://i.imgur.com/GbM1xvK.png' width='23px' height='23px'>";
 }
@@ -76,7 +75,7 @@ echo "</h3>";
 
 echo "<h3>Equipment:";
 echo $updatedequipment;
-		//level 1 
+		//level 1
 if ($_SESSION['flashlight']=="inventory"){
 	echo $flashlight;
 }if ($_SESSION['dice']=="inventory"){
@@ -110,7 +109,7 @@ if ($_SESSION['letter']=="inventory"){
 }
 echo "</h3>";
 
-//Displaying Level 
+//Displaying Level
 echo "<h3>Level:" . " " . $level . "</h3><br>";
 //Displaying Location
 if(!ISSET($_SESSION['location'])){
@@ -122,11 +121,11 @@ echo "<h2>Location:" . " <i>" . $_SESSION['location'];
 echo "</i></h2></h3>";
 //Location explanation
 echo $_SESSION['description'];
-echo "<br><br><br>"; 
+echo "<br><br><br>";
 
 //Commands
 require("commands.php");
-	
+
 	?>
 	</div>
 <?php
